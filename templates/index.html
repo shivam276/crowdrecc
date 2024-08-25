@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdRecc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body class="bg-black text-white flex flex-col min-h-screen">
+    <div id="top" class="flex justify-between items-center">
+        <div class="w-1/4"></div> <!-- Empty div for spacing -->
+        <div id="header" class="p-4 text-center w-1/2">
+            <h1 class="text-3xl font-bold text-yellow-400">CrowdRecc</h1>
+            <p class="text-gray-400">Bored by the brainrot recommendations from AI engines? Try the OG's, humans!</p>
+        </div>
+        <div id="user" class="p-4 w-1/4 text-right">
+            <p class="text-gray-400">Welcome {{user}}</p>
+        </div>
+    </div>
+    
+
+    <div id="main-content" class="flex flex-wrap justify-center gap-10 p-4">
+        <div class="flex flex-col block bg-gray-800 rounded-lg shadow-lg p-6 w-64">
+            <h2 class="text-xl font-semibold text-blue-400">Fun Historical Videos</h2>
+            <p class="text-gray-300 mb-4">Watch funny historical video recommended by others!</p>
+            <button class="join-group mt-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full inline-block text-center" data-group="https://chat.whatsapp.com/BZsOowxqmOB6jNxK5rFNb2">Join Group</button>
+        </div>
+        
+        <div class="flex flex-col block bg-gray-800 rounded-lg shadow-lg p-6 w-64">
+            <h2 class="text-xl font-semibold text-blue-400">Podcasts</h2>
+            <p class="text-gray-300 mb-4">Get started on podcasts recommended by others!</p>
+            <button class="join-group mt-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full inline-block text-center" data-group="https://chat.whatsapp.com/C68lYN5Zj8UBz3bXpktifn">Join Group</button>
+        </div>
+        
+        <div class="flex flex-col block bg-gray-800 rounded-lg shadow-lg p-6 w-64">
+            <h2 class="text-xl font-semibold text-blue-400">Engineering</h2>
+            <p class="text-gray-300 mb-4">Watch Engineering videos recommended by fellow engineers!</p>
+            <button class="join-group mt-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full inline-block text-center" data-group="https://chat.whatsapp.com/Brw5ZbvKt7fJPTLAHDQWJq">Join Group</button>
+        </div>
+    </div>
+    
+    <div class="text-center text-2xl text-gray-400 mt-8 mb-12">
+        More coming soon...
+    </div>
+
+    <div class="text-center mt-8 mb-12">
+        <button id="signupButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            Sign Up     
+        </button>
+    </div>
+
+    
+    <div id="footer" class="mt-auto p-4">
+        <p class="text-gray-500 text-center">&copy; 2024 Crowdrec. All rights reserved.</p>
+    </div>
+
+    <!-- Modal -->
+    <div id="signUpModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Sign Up with Google</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500">
+                        Click the button below to sign up using your Google account.
+                    </p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <div id="g_id_onload"
+                         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                         data-callback="handleCredentialResponse">
+                    </div>
+                    <div class="g_id_signin" data-type="standard"></div>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="closeModal" class="px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
